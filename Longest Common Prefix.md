@@ -21,5 +21,24 @@ We can use it in python in different ways Like
 If you're using _ as a variable, it should have been defined before, e.g.:
 ``
 _ = 3
+
+
+
+# OTHER SOLUTIONS WITH FASTER TIME COMPLEXITY 
+Using the sorted and using first and final
+
+```python
+class solution:
+    def longestCommonPrefix(self, v):
+        ans=""  # intializing answer string
+        v=sorted(v)  # sorting the array helps to arrange such that all the elements between the endpoints must have common 
+        first=v[0] 
+        last=v[-1]
+        for i in range(min(len(first),len(last))):
+            if(first[i]!=last[i]):
+                return ans
+            ans+=first[i]
+        return ans
+```
 print("hello"[:_])  # prints 'hel'
 ``
