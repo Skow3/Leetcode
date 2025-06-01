@@ -1,6 +1,6 @@
 Using the normal but not BRUTEFORCE 
 PYTHON 
-
+```python
 class Solution(object):
     def longestCommonPrefix(self, strs):
         """
@@ -12,8 +12,9 @@ class Solution(object):
                 print(_,s,strs[0][:_])
                 if _ >= len(s) or s[_] != strs[0][_]:
                     return strs[0][:_]
-        return 0
-
+        return 0 # this will not work instead we should use
+        return strs[0]
+```
 
 By using Slice operator i.e :
 We can use it in python in different ways Like 
