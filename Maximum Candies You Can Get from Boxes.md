@@ -99,3 +99,19 @@ public:
 ```
 
 
+
+---
+# THINGS I RECALLED TODAY
+```python
+my_set = {1, 2, 3, 4, 5}
+
+# Check if 3 is in the set
+if 3 in my_set:
+    print("3 is in the set")
+
+# Check if 10 is not in the set
+if 10 not in my_set:
+    print("10 is not in the set")
+```
+
+
