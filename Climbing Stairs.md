@@ -55,7 +55,7 @@ TC: O(n)
 ## APPROACH 3
 If we have a good look over the above solutions we can come to a conclusion that it is resembling the fibonacci series i.e the ith is the sum of i-1 and i-2 unit 
 ```python
-class solution(object):
+class Solution(object):
     def climbStairs(self, n):
         """
         :type n: int
@@ -66,7 +66,7 @@ class solution(object):
         a = 1 # i-2
         b = 2 # i-1
         c = 3 # i
-        for i in range(n):
+        for i in range(3,n+1):
             c = a + b
             temp = b
             b=c
