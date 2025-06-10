@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/14c263c6-30e5-4169-9123-56687c57d037)# EASY 
+# EASY 
 #### 3442
 
 First i thought of doing counting for each solution and making an array of indices 0 to 25 for storing the freq of different characters:
