@@ -63,4 +63,32 @@ class Solution(object):
         print(ans)
 ```
 
-This was my first approach though
+This was my first approach, though it passed only 44 /97 testcases it was failing due to :
+1. In findj function when the index returned was 0 it was not functioning quite well.
+2. It was a bogus first try and brute force approach.
+
+Then what i thought of is doing the same thing but reversed kind of:
+1. Right now we were getting k+i values and checking for same value indices but it was time taking and not that worthy.
+2. So, Instead of that we'll calculate k+start and then check which numbers are greater than k .. and since we would have
+splitted there soo.. we'll have a count variable to count that.
+
+# FINAL APPROACH:
+```python
+class Solution(object):
+    def partitionArray(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        nums.sort()
+        start = nums[0]
+        count=0
+        for i in nums:
+            if i - start > k:
+                count+=1
+                start = i ## since for next subsequence the i will be this number 
+        return count
+```
+
+
