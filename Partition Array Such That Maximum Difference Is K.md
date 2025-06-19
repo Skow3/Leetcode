@@ -3,6 +3,9 @@
 
 WILL EXPLAIN AFTER 20 MINS
 
+
+THE CODE BELOW I HAVE NOT SEEN IT IS JUST A DEMO CODE FROM MIK 
+
 ```cpp
 class Solution {
 public:
