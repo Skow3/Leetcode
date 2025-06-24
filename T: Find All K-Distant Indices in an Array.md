@@ -1,7 +1,8 @@
 # EASY
 2200
 
-The question is marked easy but it took a lot of time for me to come to a good solution
+The question is marked easy but it took a lot of time for me to come to a good solution.
+* 
 
 ---
 
