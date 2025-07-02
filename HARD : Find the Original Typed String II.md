@@ -76,9 +76,64 @@ public:
 };
 ```
 
+# FIRST SOLUTION
+```python
+class Solution(object):
+    def possibleStringCount(self, word, k):
+        """
+        :type word: str
+        :type k: intclass Solution(object):
+        """
+        M = int(1e9 + 7)
+        freq = []
+        count = 1  # initialize with 1 for the first character
+
+        for i in range(1, len(word)):
+            if word[i - 1] == word[i]:
+                count += 1
+            else:
+                freq.append(count)
+                count = 1
+        freq.append(count)  # append the last group count
+
+        P = 1
+        for i in freq:
+            P = (P * i) % M  # take mod M to avoid overflow
+
+        n = len(freq)
+        if n >= k:
+            return P
+
+        # Initialize the 2D DP table
+        t = [[0] * (k + 1) for _ in range(n + 1)]
+
+        # Base case
+        for count in range(k - 1, -1, -1):
+            t[n][count] = 1
+
+        # DP filling
+        for i in range(n - 1, -1, -1):
+            prefix = [0] * (k + 2)  # k+2 to safely access prefix[r+1]
+            for h in range(1, k + 1):
+                prefix[h] = (prefix[h - 1] + t[i + 1][h - 1]) % M
+
+            for count in range(k - 1, -1, -1):
+                l = count + 1
+                r = count + freq[i]
+
+                if r + 1 > k:
+                    r = k - 1
+
+                if l <= r:
+                    t[i][count] = (prefix[r + 1] - prefix[l] + M) % M
+
+        invalid_count = t[0][0]
+
+        return (P - invalid_count + M) % M
+```
 
 
-
+---
 
 # MORE OPTIMISED VERSION USING THE GIVEN MAX LENGTH
 ```python
@@ -143,3 +198,9 @@ class Solution(object):
 
         return (total - lessK + mod) % mod
 ```
+
+
+# Things i learnt revised !
+* Used bottom up with some more optimization.
+* FOr using bottom-up we should always think for Recursion first.
+* We'll do the topic-wise problems soon.
