@@ -68,3 +68,39 @@ class Solution(object):
         result = result.lower()
         return result == result[::-1]
 ```
+
+
+# LOOKING AT SOME MORE OPTIMIZED VERSIONS ON LEETCODE:
+```python
+class Solution:
+    def isPalindrome(self, s):
+        left, right = 0, len(s) - 1
+## CHECKING THE OUPUT 
+        while left < right:
+            while left < right and not s[left].isalnum():
+                left += 1
+            while left < right and not s[right].isalnum():
+                right -= 1
+
+            if s[left].lower() != s[right].lower():
+                return False
+
+            left += 1
+            right -= 1
+
+        return True
+```
+
+Let's try to understand:
+So let's see what is this str.isalnum() function
+```text
+Help on method_descriptor:
+
+isalnum(self, /) unbound builtins.str method
+    Return True if the string is an alpha-numeric string, False otherwise.
+
+    A string is alpha-numeric if all characters in the string are alpha-numeric and
+    there is at least one character in the string.
+```
+
+So here if the s[index] is space/punctuation marks then we are increasing the status until a character is reached.
