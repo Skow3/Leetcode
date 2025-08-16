@@ -1,0 +1,21 @@
+# EASY 
+1323
+
+---
+
+Had an easy peasy approach because i did it with python, Python's type conversion abilities are so good sometimes.
+
+# Final Approach
+```python
+class Solution(object):
+    def maximum69Number (self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        stnum = str(num)
+        for i in range(len(stnum)):
+            if stnum[i] == '6':
+                print(stnum[:i]+ '9' +stnum[i+1:])
+                break
+```
