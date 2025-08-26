@@ -1,5 +1,5 @@
 # MEDIUM
-6
+61
 
 * The question was nice and it just needed to identify the pattern.
 
