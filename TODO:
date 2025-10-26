@@ -1,0 +1,41 @@
+# MEDIUM
+2043
+
+```python
+from typing import List
+
+class Bank:
+
+    def __init__(self, balance: List[int]):
+        self.balance = balance
+        self.n = len(balance)
+
+    def transfer(self, account1: int, account2: int, money: int) -> bool:
+        if 1 <= account1 <= self.n and 1 <= account2 <= self.n:
+            if self.balance[account1 - 1] >= money:
+                self.balance[account1 - 1] -= money
+                self.balance[account2 - 1] += money
+                return True
+        return False
+
+    def deposit(self, account: int, money: int) -> bool:
+        if 1 <= account <= self.n:
+            self.balance[account - 1] += money
+            return True
+        return False
+
+    def withdraw(self, account: int, money: int) -> bool:
+        if 1 <= account <= self.n and self.balance[account - 1] >= money:
+            self.balance[account - 1] -= money
+            return True
+        return False
+
+
+# Example usage:
+# obj = Bank([10, 100, 20, 50, 30])
+# print(obj.withdraw(3, 10))  # True
+# print(obj.transfer(5, 1, 20))  # True
+# print(obj.deposit(5, 20))  # True
+# print(obj.transfer(3, 4, 15))  # False (not enough funds)
+
+```
